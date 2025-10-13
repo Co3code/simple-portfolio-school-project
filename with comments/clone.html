@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AOC Designs</title>
+
+    <!-- Bootstrap CSS para sa styling ug responsive layout -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons para sa mga social media icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* #home nga section: para ma-center vertically ug horizontally ang sulod */
+      #home {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* para ma-center vertically */
+        align-items: center; /* para ma-center horizontally */
+      }
+
+      /* Para smooth ang pag-scroll kung i-click ang navbar links */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Para ang html ug body mo-occupy full height sa screen */
+      html,
+      body {
+        height: 100%;
+      }
+
+      /* Ang body himuon nga flex column para ang footer permi naa sa ubos */
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* Ang main content mo-expand ug mo-occupy sa available space */
+      main {
+        flex: 1;
+        padding-bottom: 100px; /* space para sa footer nga naka-fixed */
+      }
+
+      /* Navbar nga sticky (permi naa sa taas kung mag-scroll) */
+      nav.navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1040; /* para ma-overlap ang uban content */
+      }
+
+      /* Para smooth ug nice tan-awon ang color change sa navbar links kung i-hover */
+      .nav-link {
+        transition: color 0.25s ease;
+      }
+      .nav-link:hover {
+        color: #0d6efd !important; /* Bootstrap primary blue */
+      }
+
+      /* Footer icons pag i-hover, mo-blue ug mo-dako gamay */
+      footer a.text-white:hover {
+        color: #0d6efd !important;
+        transform: scale(1.1);
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER: Navbar -->
+    <header>
+      <!--
+        navbar: mao ni ang main container sa navbar
+        navbar-expand-lg: mag-expand siya horizontally sugod sa large screen pataas, mobuto siya sa gamay nga screen
+        navbar-dark: para sa dark background, ang text light ang color
+        bg-dark: dark background color gikan sa Bootstrap
+      -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <!--
+            container: fixed width container nga responsive, naay padding sa kilid
+          -->
+          <!-- Brand/Logo -->
+          <!--
+            navbar-brand: para sa brand o logo sa navbar
+            fw-bold: font-weight bold (pabug-at sa font)
+          -->
+          <a class="navbar-brand fw-bold" href="#">AOC Designs</a>
+
+          <!-- Navbar toggle button para sa mobile view -->
+          <!--
+            navbar-toggler: hamburger button para i-toggle ang menu kung gamay ang screen
+            data-bs-toggle ug data-bs-target: para sa Bootstrap JS nga functionality
+            aria-* : para sa accessibility (screen readers)
+          -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <!-- hamburger icon -->
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navbar links -->
+          <!--
+            collapse navbar-collapse: para ma-collapse ug ma-expand ang menu sa gamay nga screen
+            id="navbarNav": target sa toggle button
+          -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <!--
+                navbar-nav: container para sa mga nav items
+                ms-auto: margin-start auto, para mo-push sa tuo ang menu (right align)
+              -->
+              <li class="nav-item">
+                <!--
+                  nav-link: styling para sa links sa navbar
+                  active: para ma-highlight nga active (current) nga page
+                -->
+                <a class="nav-link active" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#about">About Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN: Main content area -->
+    <!--
+      container: para ma-center ug ma-limit ang width sa content
+      my-5: margin sa top ug bottom, medyo dako (about 3rem)
+    -->
+    <main class="container my-5">
+      <!-- HOME SECTION -->
+      <!--
+        text-center: i-center ang tanang inline text elements horizontally
+      -->
+      <section id="home" class="text-center">
+        <!-- Profile photo -->
+        <!--
+          rounded-circle: para mahimo siyang circular ang image (border-radius: 50%)
+          shadow: para naay shadow effect
+          border border-3 border-white: 3px white border
+          mb-4: margin bottom spacing
+          img-fluid: responsive image (mo-scale with container)
+        -->
+        <img
+          src="profile.jpg"
+          alt="My Photo"
+          class="rounded-circle shadow border border-3 border-white mb-4 img-fluid"
+          style="max-width: 200px; height: auto"
+        />
+        <!-- Name -->
+        <h1>Anthony O. Co Untian</h1>
+        <!-- Short description -->
+        <!--
+          text-muted: para sa gray nga color sa text
+        -->
+        <p class="text-muted">Web Developer | Designer | Creator</p>
+      </section>
+
+      <!-- ABOUT ME SECTION -->
+      <!--
+        my-5: margin top ug bottom
+        text-center: center ang text horizontally
+      -->
+      <section id="about" class="my-5 text-center">
+        <h2>About Me</h2>
+        <!--
+          text-muted: gray text
+          mb-4: margin bottom para spacing
+        -->
+        <p class="text-muted mb-4">
+          Hi! I’m Anthony O. Co Untian, a passionate web developer and designer.
+          I love building clean, modern, and functional websites that bring
+          ideas to life. With a mix of creativity and technical skills, I aim to
+          craft digital experiences that leave a lasting impression.
+        </p>
+        <!-- Skills list -->
+        <!--
+          row: Bootstrap grid row para sa layout
+          justify-content-center: para ma-center horizontally ang mga columns
+        -->
+        <div class="row justify-content-center">
+          <!--
+            col-md-4: column nga 4/12 width sa medium screen pataas
+            sa smaller screen, mo-full width siya by default
+          -->
+          <div class="col-md-4">
+            <!--
+              list-group: Bootstrap styled list container
+              list-group-flush: tangtangon ang border ug rounded corners para seamless tan-awon
+            -->
+            <ul class="list-group list-group-flush">
+              <!--
+                list-group-item: styled list item naay padding ug border
+              -->
+              <li class="list-group-item">💻 Front-End Development</li>
+              <li class="list-group-item">🎨 UI/UX Design</li>
+              <li class="list-group-item">⚙️ Back-End Basics</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PORTFOLIO SECTION -->
+      <section id="portfolio" class="my-5 text-center">
+        <h2>Portfolio</h2>
+        <!--
+          row: grid row container
+          justify-content-center: center ang mga columns
+          g-4: gap (spacing) sa grid, both rows ug columns
+        -->
+        <div class="row justify-content-center g-4">
+          <div class="col-md-4">
+            <!--
+              card: Bootstrap card container
+              h-100: height 100% para pareho tanan card height
+              shadow-sm: gamay nga shadow para effect nga elevated
+            -->
+            <div class="card h-100 shadow-sm">
+              <!--
+                card-img-top: image nga naa sa ibabaw sa card, responsive
+              -->
+              <img
+                src="1.webp"
+                class="card-img-top"
+                alt="Project 1"
+                height="166.2px"
+              />
+              <div class="card-body">
+                <!-- card-title: styled title sa card -->
+                <h5 class="card-title">Project One</h5>
+                <!-- card-text: paragraph text -->
+                <p class="card-text">
+                  A responsive website built with Bootstrap and custom CSS.
+                </p>
+                <!-- btn btn-primary: blue button -->
+                <a href="#" class="btn btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <img src="25.jpg" class="card-img-top" alt="Project 2" />
+              <div class="card-body">
+                <h5 class="card-title">Project Two</h5>
+                <p class="card-text">
+                  A portfolio app featuring dynamic JavaScript components.
+                </p>
+                <a href="#" class="btn btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <img
+                src="3.jpg"
+                class="card-img-top"
+                alt="Project 3"
+                height="166.2px"
+              />
+              <div class="card-body">
+                <h5 class="card-title">Project Three</h5>
+                <p class="card-text">
+                  A simple blog layout created with HTML and CSS.
+                </p>
+                <a href="#" class="btn btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="my-5 text-center">
+        <h2>Contact Me</h2>
+        <p class="text-muted">
+          I’d love to hear from you! Reach out via email or social media below.
+        </p>
+
+        <!-- Contact form -->
+        <div class="row justify-content-center">
+          <!-- col-md-8 col-lg-6: width 8 columns sa medium screen, 6 sa large screen -->
+          <div class="col-md-8 col-lg-6">
+            <form>
+              <div class="mb-3">
+                <!-- form-label: para sa label styling -->
+                <label for="name" class="form-label">Your Name</label>
+                <!-- form-control: para sa input styling -->
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  placeholder="Enter your name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Your Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="message"
+                  rows="4"
+                  placeholder="Write your message..."
+                  required
+                ></textarea>
+              </div>
+              <!-- text-center para i-center ang button -->
+              <!-- btn btn-dark para sa dark colored button -->
+              <!-- px-4 para sa padding left ug right -->
+              <div class="text-center">
+                <button type="submit" class="btn btn-dark px-4">
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <!--
+      bg-dark: dark background color
+      text-white: white text color
+      text-center: center text horizontally
+      py-4: padding top ug bottom
+    -->
+    <footer class="bg-dark text-white text-center py-4">
+      <div class="container">
+        <p class="mb-2">Connect with me</p>
+        <!--
+          text-white: white text color
+          me-3: margin end (right) spacing
+          fs-4: font size 4 (larger)
+          bi bi-facebook (etc): Bootstrap icons classes
+        -->
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          class="text-white me-3 fs-4"
+        >
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          class="text-white me-3 fs-4"
+        >
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a
+          href="https://github.com"
+          target="_blank"
+          class="text-white me-3 fs-4"
+        >
+          <i class="bi bi-github"></i>
+        </a>
+        <a href="mailto:yourname@gmail.com" class="text-white fs-4">
+          <i class="bi bi-envelope-fill"></i>
+        </a>
+        <p class="mt-3 mb-0">&copy; 2025 AOC Designs</p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS para sa navbar toggle ug uban pang interactive components -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
