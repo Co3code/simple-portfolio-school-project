@@ -23,9 +23,7 @@
 
 ## 📸 Screenshots
 
-> _Include screenshots here (optional)_  
-> You can add `images/screenshot1.jpg`, etc., and link them in Markdown like:  
-> `![Screenshot](images/screenshot1.jpg)`
+![Screenshot of Portfolio](images/screenshot1.png)
 
 ---
 
@@ -39,9 +37,12 @@ If you'd like to get in touch:
 
 ---
 
+
+
 ## 📄 License
 
-This project is open source and free to use under the [MIT License](LICENSE) _(you can create a LICENSE file if needed)_.
+This project is open source and free to use under the [MIT License](LICENSE).
+
 
 ---
 
