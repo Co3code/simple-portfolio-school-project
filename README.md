@@ -32,7 +32,6 @@
 If you'd like to get in touch:
 
 - 📧 Email: [countian3@gmail.com](mailto:countian3@gmail.com)
-- 🌐 GitHub: [github.com/Co3code](https://github.com/Co3code)
 - 📘 Facebook: [Cy Yan](https://facebook.com)
 
 ---
